@@ -3,14 +3,6 @@ import java.util.Vector;
 
 public class VectorHeap < E extends Comparable<E>> extends PriorityQueue<E>{
 	protected Vector<E> data; // the data, kept in heap order
-	/*Comparator<E> comparadorPacientes = new Comparator<E>(){
-
-		public int compare(E paciente1, E paciente2) {
-			
-			return ((Paciente) paciente1).getPrioridad().compareTo(((Paciente) paciente2).getPrioridad());
-		}
-		
-	};*/
 	
 	public VectorHeap()
 	// post: constructs a new priority queue

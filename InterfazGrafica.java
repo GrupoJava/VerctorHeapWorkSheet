@@ -9,6 +9,7 @@
 
 import java.awt.EventQueue;
 
+import javax.imageio.ImageIO;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -17,14 +18,19 @@ import javax.swing.JSlider;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JTextField;
 import javax.swing.JTextArea;
 import javax.swing.JTextPane;
 import javax.swing.JRadioButton;
+
+import java.awt.Color;
 
 
 /**
@@ -89,13 +95,14 @@ public class InterfazGrafica {
 		
 		public void initialize(){
 			frame = new JFrame();
-			frame.setBounds(100, 100, 618, 381);
+			frame.setBounds(100, 100, 587, 381);
 			frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 			frame.getContentPane().setLayout(null);
 			
-			JLabel lblEmergencia = new JLabel("Area de Emergencia");
+			JLabel lblEmergencia = new JLabel("Cruz Roja Emer.");
+			lblEmergencia.setForeground(Color.RED);
 			lblEmergencia.setFont(new Font("Tahoma", Font.BOLD, 50));
-			lblEmergencia.setBounds(10, 11, 633, 106);
+			lblEmergencia.setBounds(10, 11, 582, 106);
 			frame.getContentPane().add(lblEmergencia);
 			
 			btnSeleccionarArchivo = new JButton("Seleccionar Archivo");
@@ -121,6 +128,12 @@ public class InterfazGrafica {
 			textArea = new JTextArea();
 			textArea.setBounds(20, 218, 306, 113);
 			frame.getContentPane().add(textArea);
+			
+			JTextPane textPane = new JTextPane();
+			textPane.setForeground(Color.RED);
+			textPane.setText("      ___ RED CROSS \n __|   |__\n[__   __] EMERGENCY\n__|    |\n__|    |\n__|    | PATIENTS\n__|__|");
+			textPane.setBounds(362, 175, 154, 140);
+			frame.getContentPane().add(textPane);
 			
 			fc = new JFileChooser();
 			
